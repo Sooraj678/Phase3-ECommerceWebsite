@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -76,8 +77,16 @@ public class RegisterCtl extends HttpServlet {
 			 tx.commit();
 			 hibernateSession.close();
 			 
-			 out.print("<html><body><h1>Successfully Data Saved in DB:</h1></body></html>");
-			 out.print("<html><body><h1><br>User id is: "+userId + "</h1></body></html>");
+			 /*out.print("<html><body><h1>Successfully Data Saved in DB:</h1></body></html>");
+			** out.print("<html><body><h1><br>User id is: "+userId + "</h1></body></html>");*/
+			 
+			 /*For displaying message properly at the VIEW Part */
+			 
+			 HttpSession httpSession =  request.getSession();
+			 httpSession.setAttribute("message", "Registration Successful: !!! User ID is: " +userId);
+			 
+			 response.sendRedirect("register.jsp");
+			 return;
 			
 			
 			
