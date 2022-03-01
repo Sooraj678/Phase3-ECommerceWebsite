@@ -8,6 +8,7 @@
 <%@include file="components/common_css_js.jsp" %>
 </head>
 <body>
-On AboutUS-View Page
+<%@include file="components/navbar.jsp" %>
+<h1>On AboutUS-View Page</h1>
 </body>
 </html>

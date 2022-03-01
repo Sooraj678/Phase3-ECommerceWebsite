@@ -1,4 +1,5 @@
 @charset "ISO-8859-1";
-body{
-	background: red;
+
+.custom-bg{
+	background:#673ab7!important;
 }

@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<%@include file="components/navbar.jsp" %>
 <h1>Hello World</h1>
 <h1> Creating Session Factory Object</h1>
 <!--this is Singleton Design Pattern in which every time we get a single same object only   -->
