@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Index-PageView</title>
+<title>E-Commerce HomePage</title>
+<%@include file="components/common_css_js.jsp" %>
+
 </head>
 <body>
 <h1>Hello World</h1>
