@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>RegisterCtl</servlet-name>
+  	<display-name>RegisterCtl</display-name>
+  	<description></description>
+  	<servlet-class>com.ecommercewebsite.controller.RegisterCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterCtl</servlet-name>
+  	<url-pattern>/RegisterCtl</url-pattern>
+  </servlet-mapping>
 </web-app>
