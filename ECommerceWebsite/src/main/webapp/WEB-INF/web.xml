@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.ecommercewebsite.controller.LoginCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutCtl</servlet-name>
+  	<display-name>LogoutCtl</display-name>
+  	<description></description>
+  	<servlet-class>com.ecommercewebsite.controller.LogoutCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegisterCtl</servlet-name>
   	<url-pattern>/RegisterCtl</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>LoginCtl</servlet-name>
   	<url-pattern>/LoginCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutCtl</servlet-name>
+  	<url-pattern>/LogoutCtl</url-pattern>
   </servlet-mapping>
 </web-app>

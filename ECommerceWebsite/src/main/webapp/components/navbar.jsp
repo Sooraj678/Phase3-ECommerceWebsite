@@ -1,3 +1,16 @@
+<!-- Conditional Rendering for logout Button when user is Logged In -->
+<%@page import="com.ecommercewebsite.entities.User"%>
+
+<%
+
+User userNavbar =  (User) session.getAttribute("current-user");
+
+
+%>
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg">
 	<div class="container">
 		<a class="navbar-brand" href="index.jsp">ECommerceCart</a>
@@ -27,12 +40,31 @@
 			</ul>
 
 			<ul class="navbar-nav ml-auto">
+			
+			<% 
+				if(userNavbar==null){
+			%>
 
 				<li class="nav-item active"><a class="nav-link"
 					href="login.jsp">Login </a></li>
 
 				<li class="nav-item active"><a class="nav-link"
 					href="register.jsp">Register </a></li>
+					
+			<%
+									}else{
+										
+			%>
+				<li class="nav-item active"><a class="nav-link"
+					href="#!"><%=userNavbar.getUserName() %></a></li>
+
+				<li class="nav-item active"><a class="nav-link"
+					href="LogoutCtl">Logout</a></li>
+			
+			<% 						
+										}
+			
+			%>
 			</ul>
 		</div>
 	</div>
