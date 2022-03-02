@@ -20,8 +20,9 @@
 						</div>
 						
 						<div class="card-body">
+						<%@ include file="components/message.jsp" %>
 						
-						<form action="loginCtl" method="post">
+						<form action="LoginCtl" method="post">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label> 
 								<input name="email" type="email" class="form-control" id="exampleInputEmail1"
