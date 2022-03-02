@@ -58,7 +58,27 @@ public class LoginCtl extends HttpServlet {
 					response.sendRedirect("login.jsp");
 					return;
 				}else {
-					out.println("<h1>Welcome "+ user.getUserName()+" ...!! </h1>");
+					//out.println("<h1>Welcome "+ user.getUserName()+" ...!! </h1>");
+					/* in this section we will redirect to two pages
+					 * 1. admin.jsp
+					 * 2. normalUserLogin.jsp
+			*Because, in this application we have two tyes of user- admin and normal User
+					 * */
+			
+					
+					//save logged in data by HttpSession's Object
+					
+					httpSession.setAttribute("current-user", user);
+					if(user.getUserType().equals("admin")) {
+						//admin :-admin.jsp
+						response.sendRedirect("admin.jsp");
+					}else if(user.getUserType().equals("normal")) {
+							//normal :-normal.jsp
+						response.sendRedirect("normalUser.jsp");
+					}else {
+						out.println("<h1> We have not identified User Type...!! Please try Again</h1>");	
+					}
+	
 				}
 			
 		} catch (Exception e) {
