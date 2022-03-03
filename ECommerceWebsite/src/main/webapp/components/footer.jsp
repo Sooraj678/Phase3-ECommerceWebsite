@@ -1,6 +1,6 @@
 <div class="card text-center custom-bg mt-3">
   	<div class="card-header">
-    	<h3 style="color: white;">Featured By ECommerceCart.com</h3>
+    	<h3 style="color:white;">Featured By <a href="https://ECommerceCart.com/">ECommerceCart.com</a></h3>
   	</div>
   	
   		<div class="card-body">

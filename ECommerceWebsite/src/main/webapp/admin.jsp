@@ -1,7 +1,3 @@
-<!-- Now we are going to protect admin.jsp Page So that except 
-admin nobody can access admin Page - So for this we will apply our Java
-Code here -->
-
 <%@page import="com.ecommercewebsite.entities.User"%>
 <%
 	User user =  (User) session.getAttribute("current-user");
@@ -36,7 +32,7 @@ Code here -->
 <body>
 <%@include file="components/navbar.jsp" %>
 	
-	<div class="container">
+	<div class="container admin">
 		<div class="row mt-3">
 		
 		<!-- First Column -->
@@ -103,7 +99,7 @@ Code here -->
 			<div class="col-md-6">
 			
 				<!-- Second Row: First Column : First Box -->
-				<div class="card">
+				<div class="card" data-toggle="modal" data-target="#add-category-modal">
 					<div class="card-body text-center">
 					<div class="container">
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
@@ -139,6 +135,51 @@ Code here -->
 	
 	</div>
 	
+	
+	<!-- Add Category Model -->
+
+<!-- Modal -->
+	<div class="modal fade" id="add-category-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header custom-bg text-white">
+					<h5 class="modal-title" id="exampleModalLabel">Please fill the Category Details</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+					<!-- we design a form here to give our input -->
+					<form>
+					
+						<div class="form-group">
+							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
+						
+						</div>
+						<div class="form-group">
+							<textarea style="height:250px;" name="catDescription" id="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
+						
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-success">Add Category</button>
+							<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						
+						</div>
+					
+					
+					</form>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--End Category Model -->
 	
 	
 </body>
