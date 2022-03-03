@@ -11,4 +11,5 @@
 <%@include file="components/navbar.jsp" %>
 <h1>On AboutUS-View Page</h1>
 </body>
+<%@include file="components/footer.jsp" %>
 </html>
