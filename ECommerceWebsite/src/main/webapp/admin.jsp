@@ -1,3 +1,7 @@
+<%@page import="com.ecommercewebsite.entities.Category"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ecommercewebsite.helper.FactoryProvider"%>
+<%@page import="com.ecommercewebsite.model.CategoryDao"%>
 <%@page import="com.ecommercewebsite.entities.User"%>
 <%
 	User user =  (User) session.getAttribute("current-user");
@@ -123,7 +127,7 @@
 			<div class="col-md-6">
 			
 			<!--Second Row: Second Column: Second Box -->
-			<div class="card">
+			<div class="card" data-toggle="modal" data-target="#add-product-modal">
 					<div class="card-body text-center">
 					<div class="container">
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
@@ -188,7 +192,107 @@
 
 
 	<!--End Category Model -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
+<!--Product Model -->
+
+<!-- Modal -->
+<div class="modal fade" id="add-product-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- form -->
+        <form action="">
+        
+			<!-- product title -->		
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Enter title of product" name="pName" required />
+			</div>  
+			
+			<!-- product description -->
+			<div class="form-group">
+				<textarea style="height:150px;" class="form-control" placeholder="Enter product description" name="pDesc"></textarea>
+			</div> 
+			
+			<!-- product price -->
+			<div class="form-group">
+				<input type="number" class="form-control" placeholder="Enter price of the product" name="pPrice" required />
+			</div>
+			
+			<!-- product discount -->
+			<div class="form-group">
+				<input type="number" class="form-control" placeholder="Enter product discount" name="pDiscount" required />
+			</div>  
+			
+			<!-- product quantity -->
+			<div class="form-group">
+				<input type="number" class="form-control" placeholder="Enter product Quantity" name="pQuantity" required />
+			</div>    
+        
+        <!-- product category, coming from DB -->
+        
+        <%
+        	CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+        	List<Category> list = cdao.getCategories();
+          
+        %>
+        <div class="form-group">
+        	<select name="catId" class="form-control" id="">
+        	<%
+        		for(Category c:list){
+        	%>
+	        	<option value=" <%= c.getCategoryId() %> "> <%= c.getCategoryTitle() %> </option>
+	        <%
+        							}
+	        %>  	
+        	</select>
+		</div>
+        
+        
+        <!-- Product File [ Product Photo ] -->
+        <div class="form-group"> 
+        <label for="pPic">Select Picture of Product</label> 
+        <br>     
+        <input type="file" id="pPic" name="pPic" required />
+        </div>
+        
+         <!-- Submit Button -->
+         <div class="container text-center">
+         	<button class="btn btn-outline-success">Add Product</button>
+         
+         </div>
+        
+        
+        
+        </form>
+        
+
+        <!-- End form -->
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+<!--End Product Model -->
 	
 </body>
 <%@include file="components/footer.jsp" %>
