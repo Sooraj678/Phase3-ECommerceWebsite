@@ -33,6 +33,13 @@
 <%@include file="components/navbar.jsp" %>
 	
 	<div class="container admin">
+	
+	<div class="container-fluid mt-3"> 
+		<%@include file="components/message.jsp" %>
+		
+	</div>
+	
+	
 		<div class="row mt-3">
 		
 		<!-- First Column -->
@@ -153,14 +160,15 @@
 				<div class="modal-body">
 				
 					<!-- we design a form here to give our input -->
-					<form>
+					<form action="ProductOperationCtl" method="post">
 					
+					<input type="hidden" name="operation" value="addcategory">
 						<div class="form-group">
 							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
 						
 						</div>
 						<div class="form-group">
-							<textarea style="height:250px;" name="catDescription" id="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
+							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
 						
 						</div>
 						<div class="container text-center">

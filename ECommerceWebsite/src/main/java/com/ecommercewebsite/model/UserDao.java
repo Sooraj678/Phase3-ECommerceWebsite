@@ -6,11 +6,11 @@ import org.hibernate.SessionFactory;
 
 import com.ecommercewebsite.entities.User;
 
-public class UserDAO {
+public class UserDao {
 	private SessionFactory factory;
 
 	/* Constructor */
-	public UserDAO(SessionFactory factory) {
+	public UserDao(SessionFactory factory) {
 		this.factory = factory;
 	}
 	

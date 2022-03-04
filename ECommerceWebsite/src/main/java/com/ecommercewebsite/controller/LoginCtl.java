@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.ecommercewebsite.entities.User;
 import com.ecommercewebsite.helper.FactoryProvider;
-import com.ecommercewebsite.model.UserDAO;
+import com.ecommercewebsite.model.UserDao;
 
 /**
  * Servlet implementation class LoginCtl
@@ -48,8 +48,8 @@ public class LoginCtl extends HttpServlet {
 				String email = request.getParameter("email");
 				String password = request.getParameter("password");
 				
-				UserDAO userDAO = 	new UserDAO(FactoryProvider.getFactory());
-				User user = userDAO.getUserByEmailAndPassword(email, password);
+				UserDao userDao = 	new UserDao(FactoryProvider.getFactory());
+				User user = userDao.getUserByEmailAndPassword(email, password);
 				//System.out.println(user);
 				
 				if (user == null) {
