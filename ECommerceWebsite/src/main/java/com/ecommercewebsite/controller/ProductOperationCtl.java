@@ -1,6 +1,10 @@
 package com.ecommercewebsite.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -110,8 +114,37 @@ public class ProductOperationCtl extends HttpServlet {
 				 // product save
 				 ProductDao pdao = new ProductDao(FactoryProvider.getFactory());
 				 pdao.saveProduct(p);
+				 
+				 
+				 // product pic upload
+				 // 1. First Find out the path to upload pic, very first goto till your peoject
+				 //by using this code of line
+				 
+                 try {
+						String path = request.getRealPath("image") + File.separator + "products" + File.separator
+								+ part.getSubmittedFileName();
+						System.out.println(path);
+
+						// Uploading Image/File Code
+						FileOutputStream fos = new FileOutputStream(path);
+
+						InputStream is = part.getInputStream();
+						// Reading data by InputStream
+
+						byte[] data = new byte[is.available()];
+						is.read(data);
+
+						// Now Writing data by File Output Stream
+						fos.write(data);
+						fos.close();
+				} 
+                 catch (Exception e) {
+					e.printStackTrace();
+				}
+				 
+				 
+				 
 				 //out.println("product save success....");
-				
 				HttpSession httpSession =  request.getSession();
 				httpSession.setAttribute("message", "Product is added successfully...");
 				response.sendRedirect("admin.jsp");
