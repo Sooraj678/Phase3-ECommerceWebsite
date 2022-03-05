@@ -47,5 +47,23 @@ public class CategoryDao {
 		return list;
 	}
 	
+	// Method for getting single category object
+	public Category getCategoryById(int cid) {
+		
+		Category cat = null;
+		
+		try {
+			
+			   Session session =  this.factory.openSession();
+			   cat =  session.get(Category.class, cid);
+			   session.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cat;
+	}
+	
 	
 }

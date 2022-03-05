@@ -209,8 +209,10 @@
       <div class="modal-body">
         
         <!-- form -->
-        <form action="">
-        
+        <form action="ProductOperationCtl" method="post" enctype="multipart/form-data">
+        	
+        	<input type="hidden" name="operation" value="addproduct"/>
+        	
 			<!-- product title -->		
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Enter title of product" name="pName" required />
@@ -237,26 +239,31 @@
 			</div>    
         
         <!-- product category, coming from DB -->
-        
-        <%
-        	CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
-        	List<Category> list = cdao.getCategories();
-          
-        %>
-        <div class="form-group">
-        	<select name="catId" class="form-control" id="">
-        	<%
-        		for(Category c:list){
-        	%>
-	        	<option value=" <%= c.getCategoryId() %> "> <%= c.getCategoryTitle() %> </option>
-	        <%
-        							}
-	        %>  	
-        	</select>
-		</div>
-        
-        
-        <!-- Product File [ Product Photo ] -->
+        <!--product category-->
+
+						<%
+						CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+						List<Category> list = cdao.getCategories();
+						%>
+
+
+						<div class="form-group">
+							<select name="catId" class="form-control" id="">
+								<%
+									for (Category c : list) {
+								%>
+								<option value="<%=c.getCategoryId()%>">
+									<%=c.getCategoryTitle()%>
+								</option>
+								<%
+									}
+								%>
+							</select>
+
+						</div>
+
+
+	<!-- Product File [ Product Photo ] -->
         <div class="form-group"> 
         <label for="pPic">Select Picture of Product</label> 
         <br>     

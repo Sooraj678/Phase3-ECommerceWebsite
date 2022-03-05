@@ -4,15 +4,21 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import com.ecommercewebsite.entities.Category;
+import com.ecommercewebsite.entities.Product;
 import com.ecommercewebsite.helper.FactoryProvider;
 import com.ecommercewebsite.model.CategoryDao;
+import com.ecommercewebsite.model.ProductDao;
 
+//this annotation is used to access video,audio or Images from the Form  
+@MultipartConfig
 public class ProductOperationCtl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -64,7 +70,54 @@ public class ProductOperationCtl extends HttpServlet {
 				
 				
 			}else if (op.trim().equals("addproduct")) {
-				// add Product Servlet Task
+				
+				// add Product Servlet complete Task we will do here
+				
+				 String pName 	=  	request.getParameter("pName");
+				 String pDesc 	=  	request.getParameter("pDesc");
+				 int pPrice		=	Integer.parseInt(request.getParameter("pPrice"));
+				 int pDiscount 	= 	Integer.parseInt(request.getParameter("pDiscount"));
+				 int pQuantity 	= 	Integer.parseInt(request.getParameter("pQuantity"));
+				 //System.out.println("Coming Quantity is : " + pQuantity);
+				 
+				 int catId		=	Integer.parseInt(request.getParameter("catId"));
+				// System.out.println("Coming Category ID is : " + catId);
+				 
+				 
+				 // Now Receiving  Product Pic from View Part by this line of code
+				 Part part = request.getPart("pPic");
+				 
+				 Product p = new Product();
+				 
+				 p.setpName(pName);
+				 p.setpDesc(pDesc);
+				 p.setpPrice(pPrice);
+				 p.setpDiscount(pDiscount);
+				 p.setpQuantity(pQuantity);
+				 
+				 // by part.getSubmittedFileName() method we extract name of submitted file/pic  
+				 p.setpPhoto(part.getSubmittedFileName());
+				 
+				 
+				 // get Category Object by category id because category data is not part of 
+				 // Product table so storing data of category into product we will do by 
+				 // Following method
+				 
+				 CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+				 Category category =  cdao.getCategoryById(catId);
+				 p.setCategory(category);
+				 
+				 // product save
+				 ProductDao pdao = new ProductDao(FactoryProvider.getFactory());
+				 pdao.saveProduct(p);
+				 //out.println("product save success....");
+				
+				HttpSession httpSession =  request.getSession();
+				httpSession.setAttribute("message", "Product is added successfully...");
+				response.sendRedirect("admin.jsp");
+				return;
+				 
+				 
 			}
 			
 			
