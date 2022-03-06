@@ -86,7 +86,9 @@
 								{
 
 							%>
-						<div class="card">
+							
+					<!-- Product Card -->
+						<div class="card product-card">
 						
 							<div class="container text-center">
 							
@@ -103,9 +105,9 @@
 								</p>
 							</div>
 							
-							<div class="card-footer">
+							<div class="card-footer text-center">
 								<button class="btn custom-bg text-white">Add to Cart</button>
-								<button class="btn btn-outline-primary">&#8377;<%=p.getpPrice() %></button>
+								<button class="btn btn-outline-success">&#8377;<%=p.getPriceAfterApplyingDiscount()%>/- <span class="text-secondary discount-label">&#8377; <%=p.getpPrice()%> , <%=p.getpDiscount()%>% off</span></button>
 							
 							</div>
 						</div>
