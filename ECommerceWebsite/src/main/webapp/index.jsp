@@ -138,6 +138,8 @@
 	</div>
 	</div>
 
+<%@include file="components/common_modals.jsp" %>
+
 </body>
 
 <%@include file="components/footer.jsp" %>

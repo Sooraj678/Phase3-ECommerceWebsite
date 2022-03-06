@@ -41,6 +41,10 @@ User userNavbar =  (User) session.getAttribute("current-user");
 
 			<ul class="navbar-nav ml-auto">
 			
+			<!-- For Add Cart Option -->
+			<li class="nav-item active"><a class="nav-link"
+					href="#!" data-toggle="modal" data-target="#cart"> <i class="fa fa-cart-plus" style="font-size:20px;"></i> <span class="ml-0 cart-items">( 0 )</span> </a></li>
+			
 			<% 
 				if(userNavbar==null){
 			%>
