@@ -19,14 +19,31 @@
 	
 	<%@include file="components/navbar.jsp" %>
 	
+	<!-- For Showing Complete data into center  -->
+	<div class="container-fluid">
+	
 	<div class="row mt-3 mx-2">
 	
 	<%
-		ProductDao dao =  new ProductDao(FactoryProvider.getFactory());
-		List<Product> list =  dao.getAllProducts();
 		
-		CategoryDao cdao  = new CategoryDao(FactoryProvider.getFactory());
-		List<Category> clist = 	cdao.getCategories();
+			String cat =  request.getParameter("category");
+			//out.println(cat);
+			
+			ProductDao dao =  new ProductDao(FactoryProvider.getFactory());
+			List<Product> list =null;
+			
+			if( cat ==null || cat.trim().equals("all")){	
+				list =  dao.getAllProducts();
+
+			}else{
+					
+					int cid = Integer.parseInt(cat.trim());
+					list = dao.getAllProductsById(cid);
+					
+			}
+			
+			CategoryDao cdao  = new CategoryDao(FactoryProvider.getFactory());
+			List<Category> clist = 	cdao.getCategories();
 	%>
 	
 	<!-- Show Categories  -->
@@ -34,7 +51,7 @@
 		
 			<div class="list-group mt-4">
 			
-				<a href="#" class="list-group-item list-group-item-action active">
+				<a href="index.jsp?category=all" class="list-group-item list-group-item-action active">
 					All Products </a>
 
 			
@@ -42,7 +59,7 @@
 				for(Category c: clist){		
 			%>
 			
-			<a href="#" class="list-group-item list-group-item-action"><%=c.getCategoryTitle() %></a>
+			<a href="index.jsp?category=<%=c.getCategoryId()%>" class="list-group-item list-group-item-action"><%=c.getCategoryTitle() %></a>
 			
 			<%
 				}
@@ -53,7 +70,7 @@
 		</div>
 	
 	<!-- Show Products  -->	
-		<div class="col-md-8">
+		<div class="col-md-10">
 				<!-- Row -->
 				
 				<div class="row mt-4">
@@ -96,7 +113,16 @@
 
 
 
-						<% } %>					
+						<% 
+								}
+							if(list.size() ==0){
+								
+								out.println("<h3>No items available for this category</h3>");
+							}
+							
+							
+							
+						%>					
 						
 						
 						</div>
@@ -107,6 +133,7 @@
 				</div>
 		</div>
 	
+	</div>
 	</div>
 
 </body>
