@@ -122,6 +122,22 @@ function updateCart() {
         
 }
 
+//delete item from cart
+function deleteItemFromCart(pid)
+{
+    let cart = JSON.parse(localStorage.getItem('cart'));
+
+    let newcart = cart.filter((item) => item.productId != pid)
+
+    localStorage.setItem('cart', JSON.stringify(newcart))
+
+    updateCart();
+
+    showToast("Item is removed from cart ")
+
+}
+
+
 $(document).ready(function () {
 
     updateCart()
