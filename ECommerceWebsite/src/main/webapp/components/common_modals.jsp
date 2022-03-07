@@ -30,3 +30,5 @@
     </div>
   </div>
 </div>
+
+<div id="toast">This is our custom Toast text</div>
