@@ -10,10 +10,20 @@
 <body>
 <%@include file="components/navbar.jsp" %>
 
+<div class="container-fluid"> 
+
+		<div class="container text-center">
+           	<img src="image/back.jpg" style="max-width:100px;" class="img-fluid" alt="">
+    	</div>
+    	
+<div class="col-md-12 text-center">
+<h1> This is Normal User Pannel</h1>
+</div>
+</div>
 
 
 
-<h1> This is normal User Pannel</h1>
+
 
 
 

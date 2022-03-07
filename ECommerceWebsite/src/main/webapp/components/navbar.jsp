@@ -13,7 +13,7 @@ User userNavbar =  (User) session.getAttribute("current-user");
 
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg">
 	<div class="container">
-		<a class="navbar-brand" href="index.jsp">ECommerceCart</a>
+		<a class="navbar-brand" href="eCommerceCartWelcome.jsp">ECommerceCart</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"

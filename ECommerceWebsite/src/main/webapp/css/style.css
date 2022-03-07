@@ -76,3 +76,9 @@
         opacity: 0;
     }
 }
+
+.home-content-wrapper{
+	background-image: url('../image/BackG.jpg');
+	background-size: cover;
+	height:80%;
+}
