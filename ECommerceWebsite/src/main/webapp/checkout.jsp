@@ -3,7 +3,7 @@
     User user = (User) session.getAttribute("current-user");
     if (user == null) {
 
-        session.setAttribute("message", "You are not logged in !! Login first to access checkout page");
+        session.setAttribute("message", "You are not logged in !! Login first to access Checkout page");
         response.sendRedirect("login.jsp");
         return;
 
@@ -88,4 +88,5 @@
 
         <%@include  file="components/common_modals.jsp" %>
     </body>
+<%@include file="components/footer.jsp" %>
 </html>

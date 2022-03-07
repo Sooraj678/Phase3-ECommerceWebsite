@@ -60,7 +60,7 @@ User userNavbar =  (User) session.getAttribute("current-user");
 										
 			%>
 				<li class="nav-item active"><a class="nav-link"
-					href="#!"><%=userNavbar.getUserName() %></a></li>
+					href="<%=userNavbar.getUserType().equals("admin") ? "admin.jsp" : "normalUser.jsp"%>"> <%=userNavbar.getUserName() %> </a></li>
 
 				<li class="nav-item active"><a class="nav-link"
 					href="LogoutCtl">Logout</a></li>
