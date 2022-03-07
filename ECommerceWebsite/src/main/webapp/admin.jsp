@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="com.ecommercewebsite.helper.Helper"%>
 <%@page import="com.ecommercewebsite.entities.Category"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ecommercewebsite.helper.FactoryProvider"%>
@@ -22,6 +24,19 @@
 
 
 %>
+
+
+<%
+		CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+		List<Category> list = cdao.getCategories();
+		
+		
+		//Getting count for product and user by using Map concepts
+		
+		Map<String,Long> m = Helper.getCounts(FactoryProvider.getFactory());
+		
+%>
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -56,7 +71,7 @@
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
 							src="image/seo-and-web.png" alt="user_icon">
 						</div>
-						<h1>5656</h1>
+						<h1><%=m.get("userCount")%></h1>
 						<h1 class="text-uppercase text-muted">Users</h1>
 					</div>
 				
@@ -74,7 +89,7 @@
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
 							src="image/list.png" alt="user_icon">
 					</div>
-						<h1>7070</h1>
+						<h1> <%=list.size() %> </h1>
 						<h1 class="text-uppercase text-muted">Categories</h1>
 					</div>
 				
@@ -93,7 +108,7 @@
 							src="image/product.png" alt="user_icon">
 					</div>
 						
-						<h1>858</h1>
+						<h1> <%=m.get("productCount")%> </h1>
 						<h1 class="text-uppercase text-muted">Products</h1>
 					</div>
 				
@@ -240,11 +255,6 @@
         
         <!-- product category, coming from DB -->
         <!--product category-->
-
-						<%
-						CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
-						List<Category> list = cdao.getCategories();
-						%>
 
 
 						<div class="form-group">
