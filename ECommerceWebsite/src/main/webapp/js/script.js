@@ -68,7 +68,7 @@ function updateCart() {
     {
         console.log("Cart is empty !!")
         $(".cart-items").html("( 0 )");
-        $(".cart-body").html("<h3>Cart does not have any items </h3>");
+        $(".cart-body").html("<h3>Cart Does Not Have Any Items </h3>");
         $(".checkout-btn").attr('disabled', true)
     } else{
     	
