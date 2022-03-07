@@ -121,6 +121,8 @@ function updateCart() {
             <tr><td colspan='5' class='text-right font-weight-bold m-5'> Total Price : ${totalPrice} </td></tr>
          </table>`
         $(".cart-body").html(table);
+        $(".checkout-btn").attr('disabled', false)
+        console.log("removed")
     }
         
 }
@@ -155,3 +157,9 @@ function showToast(content) {
     }, 2000);
 }
 
+
+function goToCheckout() {
+
+    window.location = "checkout.jsp"
+
+}
