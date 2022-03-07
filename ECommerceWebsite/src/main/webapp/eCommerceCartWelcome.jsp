@@ -27,7 +27,7 @@ font-family: "Comic Sans MS", "Comic Sans", cursive;
 		<div class="overlay-box ">
 			<div class="container">
 				<div class="welcome-text text-center mt-3" style="padding: 100px;">
-				<h1><b>ECOMMERCE PORTAL WELCOMES YOU ALL  <br /> <br /> <br /><br /> @==> To The Welcome Page of ECommerceCart</b></h1>
+				<h1 style="color:#ffff00!important;"><b>ECOMMERCE PORTAL WELCOMES YOU ALL  <br /> <br /> <br /><br /> @==> To The Welcome Page of ECommerceCart</b></h1>
 				</div>
 
 			</div>
