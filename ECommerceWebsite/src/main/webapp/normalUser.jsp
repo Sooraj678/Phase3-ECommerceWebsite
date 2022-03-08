@@ -10,10 +10,10 @@ border-radius: 25px;
 font-family: "Comic Sans MS", "Comic Sans", cursive;
 
   position:absolute;
-  left:   700px;
-  width:  800px;
-  height: 540px;
-  border: 10px solid black;
+  left:   800px;
+  width:  900px;
+  height: 610px;
+  border: 10px solid red;
 
 }
 

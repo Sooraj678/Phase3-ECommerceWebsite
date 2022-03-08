@@ -55,6 +55,12 @@ User userNavbar =  (User) session.getAttribute("current-user");
 				<li class="nav-item active"><a class="nav-link"
 					href="register.jsp">Register </a></li>
 					
+				<li class="nav-item active"><a class="nav-link"
+					href="aboutUS.jsp">AboutUs </a></li>
+					
+				<li class="nav-item active"><a class="nav-link"
+					href="contactUS.jsp">ContactUs </a></li>
+					
 			<%
 									}else{
 										
@@ -64,6 +70,12 @@ User userNavbar =  (User) session.getAttribute("current-user");
 
 				<li class="nav-item active"><a class="nav-link"
 					href="LogoutCtl">Logout</a></li>
+					
+				<li class="nav-item active"><a class="nav-link"
+					href="aboutUS.jsp">AboutUs </a></li>
+					
+				<li class="nav-item active"><a class="nav-link"
+					href="contactUS.jsp">ContactUs </a></li>
 			
 			<% 						
 										}
