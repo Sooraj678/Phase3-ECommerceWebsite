@@ -72,11 +72,11 @@
                                 </div>
 
                                 <div class="container text-center">
-                                    <button class="btn btn-outline-success">Order Now</button>
-                                    
-                                    <!-- <button class="btn btn-outline-primary">Continue Shopping With US</button> -->  
-                                
-									<a href="eCommerceCartWelcome.jsp" class="text-center d-block mb-2"><h4 style="color:blue;"> Continue Shopping With US </h4> </a>                                
+                                   
+                                   <!-- <button class="btn btn-outline-primary">Continue Shopping With US</button> -->  
+									<a href="eCommerceCartWelcome.jsp" class="text-center d-block mb-2"><h4 style="color:blue;"> Continue Shopping With US </h4> </a>  
+									
+									<button class="btn btn-outline-success">Order Now</button>                              
                                 </div>
 
                             </form>    
@@ -87,7 +87,6 @@
             </div>
 
         </div>
-
 
         <%@include  file="components/common_modals.jsp" %>
     </body>
