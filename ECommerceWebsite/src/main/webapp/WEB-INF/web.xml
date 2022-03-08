@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>com.ecommercewebsite.controller.ProductOperationCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ContactUserCtl</servlet-name>
+  	<display-name>ContactUserCtl</display-name>
+  	<description></description>
+  	<servlet-class>com.ecommercewebsite.controller.ContactUserCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegisterCtl</servlet-name>
   	<url-pattern>/RegisterCtl</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>ProductOperationCtl</servlet-name>
   	<url-pattern>/ProductOperationCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ContactUserCtl</servlet-name>
+  	<url-pattern>/ContactUserCtl</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -24,7 +24,7 @@
                      
 					<h3 class="text-center my-3" style="color:#673ab7!important; "><b>Contact Us For Any Query --!!</b></h3>
 					
-		<form action="#!" method="post">
+		<form action="ContactUserCtl" method="post">
 						<div class="form-group">
 							<label for="name" style="color:blue;"><b>Your Name</b></label> 
 							<input name="user_name" type="text"

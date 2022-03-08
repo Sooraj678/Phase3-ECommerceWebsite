@@ -14,6 +14,7 @@
         <mapping class= "com.ecommercewebsite.entities.User" />
         <mapping class= "com.ecommercewebsite.entities.Category" />
         <mapping class= "com.ecommercewebsite.entities.Product" />
+        <mapping class= "com.ecommercewebsite.entities.ContactUser" />
              
     </session-factory>
     

@@ -65,6 +65,7 @@ public class ProductOperationCtl extends HttpServlet {
 				
 				CategoryDao categoryDao =  new CategoryDao(FactoryProvider.getFactory());
 				int catId = categoryDao.saveCategory(category);
+				
 				//out.println("Category data saved in DB: ");
 				HttpSession httpSession =  request.getSession();
 				httpSession.setAttribute("message", "Category added successfully : "+catId);
