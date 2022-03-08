@@ -163,3 +163,5 @@ function goToCheckout() {
     window.location = "checkout.jsp"
 
 }
+
+

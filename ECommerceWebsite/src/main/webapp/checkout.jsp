@@ -73,7 +73,10 @@
 
                                 <div class="container text-center">
                                     <button class="btn btn-outline-success">Order Now</button>
-                                    <button class="btn btn-outline-primary">Continue Shopping</button>
+                                    
+                                    <!-- <button class="btn btn-outline-primary">Continue Shopping With US</button> -->  
+                                
+									<a href="eCommerceCartWelcome.jsp" class="text-center d-block mb-2"><h4 style="color:blue;"> Continue Shopping With US </h4> </a>                                
                                 </div>
 
                             </form>    
