@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>NewUser-ViewPage</title>
+<title>ContactUS-ViewPage</title>
 <%@include file="components/common_css_js.jsp"%>
 </head>
 <body>
@@ -19,46 +19,48 @@
 				<div class="card-body px-5">
 				
   				<div class="container text-center">
-                          <img src="image/add-friend.png" style="max-width:100px;" class="img-fluid" alt="">
+                          <img src="image/contactUs.jpg" style="max-width:100px;" class="img-fluid" alt="">
                      </div>
                      
-					<h3 class="text-center my-3">Sign-Up Here --!!</h3>
-		<form action="RegisterCtl" method="post">
+					<h3 class="text-center my-3" style="color:#673ab7!important; "><b>Contact Us For Any Query --!!</b></h3>
+					
+		<form action="#!" method="post">
 						<div class="form-group">
-							<label for="name" style="color:#ff5722!important;"><b>User Name</b></label> 
+							<label for="name" style="color:blue;"><b>Your Name</b></label> 
 							<input name="user_name" type="text"
 								class="form-control" id="name" aria-describedby="emailHelp"
-								placeholder="Enter User Name Here..!!">
+								placeholder="Enter Your Name Here..!!">
 						</div>
 
 						<div class="form-group">
-							<label for="email" style="color:#ff5722!important;"><b>User Email-Id</b></label> 
+							<label for="email" style="color: blue;"><b>Your Email-ID</b></label> 
 							<input name="user_email" type="email"
 								class="form-control" id="email" aria-describedby="emailHelp"
-								placeholder="Enter your Email-ID Here..!!">
+								placeholder="Enter Your Email-ID Here..!!">
 						</div>
 
 						<div class="form-group">
-							<label for="password" style="color:#ff5722!important;"><b>User Password</b></label> 
-							<input name="user_password"  type="password" class="form-control" id="password"
-								aria-describedby="emailHelp"
-								placeholder="Enter your Password Here..!!">
-						</div>
-
-						<div class="form-group">
-							<label for="phone" style="color:#ff5722!important;"><b>User Phone</b></label> 
+							<label for="phone" style="color: blue;"><b>Your Phone Number</b></label> 
 							<input name="user_phone" type="number"
 								class="form-control" id="phone" aria-describedby="emailHelp"
-								placeholder="Enter your Phone Number Here..!!">
+								placeholder="Enter Your Phone Number Here..!!">
+						</div>
+						
+						
+						<div class="form-group">
+							<label for="subject" style="color: blue;"><b>Subject Related to Query</b></label> 
+							<input name="subjectOfQuery"  type="text" class="form-control" id="subjectOfQuery"
+								aria-describedby="emailHelp"
+								placeholder="Enter Your Subject Related to Your Query Here..!!">
 						</div>
 
 						<div class="form-group">
-							<label for="phone" style="color:#ff5722!important;"><b>User Address</b></label>
-							<textarea name="user_address" style="height: 150px;" class="form-control" placeholder="Enter Your Address Here...!!"></textarea>
+							<label for="yourProblem" style="color: blue;"><b> Enter Your Thoughts for Query</b></label>
+							<textarea name="yourProblem" style="height: 150px;" class="form-control" placeholder="Enter Your Statement for Query Here...!!"></textarea>
 						</div>
 
 						<div class="container text-center">
-							<button class="btn btn-outline-success">Register Here</button>
+							<button class="btn btn-outline-success">Submit Your Query to US</button>
 							<a href="login.jsp" class="text-right d-block mb-2"> <h6 style="color:blue;"> GoTo Login Page </h6> </a>
 						</div>
 
