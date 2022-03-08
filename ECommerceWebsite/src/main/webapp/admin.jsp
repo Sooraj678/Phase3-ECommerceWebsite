@@ -159,9 +159,72 @@
 	
 	</div>
 	
+	<!-- Start of Third Row to Perform Additional Operation For the Admin -->	
+
+<div class="row mt-3">
+		
+		<!-- First Column -->
+			<div class="col-md-4">
+			
+			<!-- First box -->
+				<div class="card" data-toggle="modal" data-target="#change-adminPassword-modal">
+					<div class="card-body text-center">
+						<div class="container">
+							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
+							src="image/passwordChange.jpg" alt="user_icon">
+						</div>
+						<p class="mt-2">Click here for Admin Password Change </p>
+						<h1 class="text-uppercase text-muted">Pwd Change</h1>
+					</div>
+				
+				</div>	
+			
+			</div>
+			
+		<!-- Second Column -->	
+			<div class="col-md-4">
+			
+			<!-- Second box -->
+				<div class="card" data-toggle="modal" data-target="#getUserList-modal">
+					<div class="card-body text-center">
+					<div class="container">
+							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
+							src="image/userList.png" alt="user_icon">
+					</div>
+						<p class="mt-2">Click here for Getting User List</p>
+						<h1 class="text-uppercase text-muted">Get User List</h1>
+					</div>
+				
+				</div>	
+			
+			</div>
+			
+		<!-- Third Column -->	
+			<div class="col-md-4">
+			
+			<!-- Third box -->
+				<div class="card" data-toggle="modal" data-target="#purchasedReport-modal">
+					<div class="card-body text-center">
+					<div class="container">
+							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
+							src="image/purchaseFiltered.png" alt="user_icon">
+					</div>
+						
+						<p class="mt-2">Click here to see Purchase Report </p>
+						<h1 class="text-uppercase text-muted">Filtered Data</h1>
+					</div>
+				
+				</div>	
+			
+			</div>
+		</div>
+	
+
+<!-- End of Third Row to Perform Additional Operation For the Admin -->
+	
+	
 	</div>
-	
-	
+
 	<!-- Add Category Model -->
 
 <!-- Modal -->
@@ -293,13 +356,7 @@
 
         <!-- End form -->
         
-        
-        
-        
-        
-        
-        
-        
+  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -310,6 +367,164 @@
 
 	
 <!--End Product Model -->
+
+
+
+<!-- Add Admin Password Change Model -->
+
+<!-- Password Change Modal -->
+	<div class="modal fade" id="change-adminPassword-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header custom-bg text-white">
+					<h5 class="modal-title" id="exampleModalLabel">Please fill the Details for Admin Password Change</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+					<!-- we design a form here to give our input -->
+					<form action="#!" method="post">
+					
+					<input type="hidden" name="operation" value="addcategory">
+						<div class="form-group">
+							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
+						
+						</div>
+						<div class="form-group">
+							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
+						
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-success">Reset Password</button>
+							<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						
+						</div>
+					
+					
+					</form>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- End of Admin Password Change Model -->
+
+
+
+
+<!-- Add Getting User List Model -->
+
+<!-- Getting User List Modal -->
+	<div class="modal fade" id="getUserList-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header custom-bg text-white">
+					<h5 class="modal-title" id="exampleModalLabel">Showing User List</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+					<!-- we design a form here to give our input -->
+					<form action="#!" method="post">
+					
+					<input type="hidden" name="operation" value="addcategory">
+						<div class="form-group">
+							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
+						
+						</div>
+						<div class="form-group">
+							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
+						
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-success">Get User List</button>
+							<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						
+						</div>
+					
+					
+					</form>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- End of Getting User List Model -->
+
+
+
+<!-- Add Filtered Purchase Report Model -->
+
+<!-- Filtered Purchase Report Modal -->
+	<div class="modal fade" id="purchasedReport-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header custom-bg text-white">
+					<h5 class="modal-title" id="exampleModalLabel">Showing Purchased Report</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+					<!-- we design a form here to give our input -->
+					<form action="#!" method="post">
+					
+					<input type="hidden" name="operation" value="addcategory">
+						<div class="form-group">
+							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
+						
+						</div>
+						<div class="form-group">
+							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
+						
+						</div>
+						<div class="container text-center">
+							<button class="btn btn-outline-success">Show Purchased Report</button>
+							<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						
+						</div>
+					
+					
+					</form>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- End of Filtered Purchase Report Model -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--For Accessing CheckOut Page from directly Cart only -->
 <%@include  file="components/common_modals.jsp" %>
