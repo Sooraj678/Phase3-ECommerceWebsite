@@ -193,7 +193,7 @@
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
 							src="image/userList.png" alt="user_icon">
 					</div>
-						<p class="mt-2">Click here to see User List</p>
+						<p class="mt-2">Click Here for User-List and User-Search</p>
 						<h1 class="text-uppercase text-muted">Get User List</h1>
 					</div>
 				
@@ -448,7 +448,7 @@
 					<!-- Search Bar Coding or search Icon coding -->
 					<div class="search-container">
 					<form action="searchUser.jsp" method="post">
-						<input type="text" placeholder="Search User by Name" name="search">
+						<input type="text" placeholder="SearchBy Name,No,Email" name="searchName">
 						<button type="submit">
 							<i class="fa fa-search"></i>
 						</button>
