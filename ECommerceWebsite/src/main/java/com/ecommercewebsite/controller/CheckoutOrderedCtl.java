@@ -71,10 +71,10 @@ public class CheckoutOrderedCtl extends HttpServlet {
 		
 		
 		
-		long flag =PurchasedRecordDao.addPuchasedRecord(record);
+		long flag =PurchasedRecordDao.addPurchasedRecord(record);
 		
 		if ( flag>0) {
-			httpSession.setAttribute("message", "Your Ordered has been Placed ...!!!");
+			httpSession.setAttribute("message", "Your Ordered has been Placed ...!!! Please GoTo in Your Cart and remove Added items...!!!");
 			response.sendRedirect("viewOrderd.jsp");
 			return;
 		}

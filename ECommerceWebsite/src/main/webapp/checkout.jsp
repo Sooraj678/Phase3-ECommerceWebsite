@@ -25,6 +25,7 @@
         <%@include  file="components/navbar.jsp" %>
 
         <div class="container">
+        <%@include file="components/message.jsp" %>
             <div class="row mt-5">                
 
                 <div class="col-md-6">
@@ -68,7 +69,7 @@
                                 
                                 <div class="form-group">
                                     <label for="name"><b>Purchase Date</b></label>
-                                    <input name="purchaseDate" value="purchaseDate" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter purchase Date">
+                                    <input name="purchaseDate" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter purchase Date">
                                 </div>
 
 

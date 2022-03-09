@@ -13,7 +13,7 @@ public class PurchasedRecordDao {
 	    Connection conn;
 	    try {
 	      conn = DbConnectionProvider.getCon();
-	      PreparedStatement stmt = conn.prepareStatement("select Max(id) from purchasedrecord");
+	      PreparedStatement stmt = conn.prepareStatement("select Max(id_Purchase) from purchasedrecord");
 	      ResultSet rs = stmt.executeQuery();
 	      while(rs.next()){
 	        pk = rs.getLong(1);
@@ -28,7 +28,7 @@ public class PurchasedRecordDao {
 	  
 	
 	
-	public static long addPuchasedRecord(PurchasedRecord record) {
+	public static long addPurchasedRecord(PurchasedRecord record) {
 	    int i = 0;
 	    try {
 	      Connection conn = DbConnectionProvider.getCon();
