@@ -211,7 +211,7 @@
 					</div>
 						
 						<p class="mt-2">Click here to see Purchase Report </p>
-						<h1 class="text-uppercase text-muted">Filtered Data</h1>
+						<h1 class="text-uppercase text-muted">Filter Data</h1>
 					</div>
 				
 				</div>	
