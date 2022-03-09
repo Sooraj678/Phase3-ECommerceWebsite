@@ -73,7 +73,7 @@ function updateCart() {
     } else{
     	
 
-        //there is some in cart to show
+        //there is something in cart to show
         console.log(cart);
         $(".cart-items").html(`( ${cart.length} )`);
         let table = `
