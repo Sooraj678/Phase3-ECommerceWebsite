@@ -387,25 +387,29 @@
 				<div class="modal-body">
 				
 					<!-- we design a form here to give our input -->
-					<form action="#!" method="post">
 					
-					<input type="hidden" name="operation" value="addcategory">
+					<form action="UpdateAdminPasswordCtl" method="post">
+					
 						<div class="form-group">
-							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
-						
+							<label for="email" style="color:#ff5722!important;"><b>Admin's Email-Id</b></label> 
+							<input name="admin_email" type="email"
+								class="form-control" id="email" aria-describedby="emailHelp"
+								placeholder="Enter admin Email-Id Here to update admin Password..!!">
 						</div>
-						<div class="form-group">
-							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
 						
+						<div class="form-group">
+							<label for="adminPasswordChange" style="color:#ff5722!important;"><b>Enter Admin New Password to be Update</b></label> 
+							<input name="admin_Newpassword"  type="password" class="form-control" id="password"
+								aria-describedby="emailHelp"
+								placeholder="Enter admin's new Password Here for updation..!!">
 						</div>
 						<div class="container text-center">
-							<button class="btn btn-outline-success">Reset Password</button>
+							<button class="btn btn-outline-success">Reset-AdminPassword</button>
 							<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Close</button>
 						
 						</div>
-					
-					
+
 					</form>
 			
 				</div>
