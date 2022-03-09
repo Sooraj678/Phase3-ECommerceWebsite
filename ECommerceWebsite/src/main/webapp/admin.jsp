@@ -434,6 +434,28 @@
 			<div class="modal-content">
 				<div class="modal-header custom-bg text-white">
 					<h5 class="modal-title" id="exampleModalLabel">Showing User List</h5>
+					
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<!-- Search Bar Coding or search Icon coding -->
+					<div class="search-container">
+					<form action="searchUser.jsp" method="post">
+						<input type="text" placeholder="Search User by Name" name="search">
+						<button type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</form>
+					</div>
+					<!-- Search Bar ends here -->
+					
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
