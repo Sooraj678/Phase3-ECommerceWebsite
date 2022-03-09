@@ -1,3 +1,5 @@
+<%@page import="com.ecommercewebsite.helper.DbConnectionProvider"%>
+<%@page import="java.sql.*"%>
 <%@page import="java.util.Map"%>
 <%@page import="com.ecommercewebsite.helper.Helper"%>
 <%@page import="com.ecommercewebsite.entities.Category"%>
@@ -191,7 +193,7 @@
 							<img style="max-width: 125px;" class="img-fluid rounded-circle" 
 							src="image/userList.png" alt="user_icon">
 					</div>
-						<p class="mt-2">Click here for Getting User List</p>
+						<p class="mt-2">Click here to see User List</p>
 						<h1 class="text-uppercase text-muted">Get User List</h1>
 					</div>
 				
@@ -441,18 +443,48 @@
 				
 					<!-- we design a form here to give our input -->
 					<form action="#!" method="post">
-					
-					<input type="hidden" name="operation" value="addcategory">
-						<div class="form-group">
-							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
-						
-						</div>
-						<div class="form-group">
-							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
-						
-						</div>
+
+						<table class="table table-bordered table-dark">
+							<thead>
+								<tr>
+									<th scope="col">Id</th>
+									<th scope="col">Address</th>
+									<th scope="col">Email</th>
+									<th scope="col">Name</th>
+									<th scope="col">Password</th>
+									<th scope="col">Phone</th>
+									<th scope="col">UserType</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%
+									try {
+									String search = request.getParameter("search");
+									Connection con = DbConnectionProvider.getCon();
+									Statement stmt = con.createStatement();
+									ResultSet rs = stmt.executeQuery("select *from user ");
+									while (rs.next()) {
+								%>
+								<tr>
+									<td><%=rs.getString(1)%></td>
+									<td><%=rs.getString(2)%></td>
+									<td><%=rs.getString(3)%></td>
+									<td><%=rs.getString(4)%></td>
+									<td><%=rs.getString(5)%></td>
+									<td><%=rs.getString(6)%></td>
+									<td><%=rs.getString(8)%></td>
+								</tr>
+
+								<%
+									}
+
+								} catch (Exception e) {
+									System.out.println(e);
+								}
+								%>
+							</tbody>
+						</table>
 						<div class="container text-center">
-							<button class="btn btn-outline-success">Get User List</button>
 							<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Close</button>
 						
