@@ -46,6 +46,12 @@
   	<description></description>
   	<servlet-class>com.ecommercewebsite.controller.CheckoutOrderedCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PrintBillCtl</servlet-name>
+  	<display-name>PrintBillCtl</display-name>
+  	<description></description>
+  	<servlet-class>com.ecommercewebsite.controller.PrintBillCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegisterCtl</servlet-name>
   	<url-pattern>/RegisterCtl</url-pattern>
@@ -73,5 +79,9 @@
   <servlet-mapping>
   	<servlet-name>CheckoutOrderedCtl</servlet-name>
   	<url-pattern>/CheckoutOrderedCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PrintBillCtl</servlet-name>
+  	<url-pattern>/PrintBillCtl</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -58,7 +58,7 @@
 									never share your email with anyone else.</small>
 			</div>
 			<div class="about">
-            <a href="bill.jsp?emailId=<%=user.getUserEmail() %>" style="color:red;"><b>Click here to Print Your Bill...!!!</b></a>
+            <a href="bill.jsp?emailId=<%=user.getUserEmail() %>" style="color:red;"><b>Click here to see Your Bill...!!!</b></a>
              </div>
             
             
