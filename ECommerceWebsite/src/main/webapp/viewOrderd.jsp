@@ -1,6 +1,7 @@
 <%
 
     User user = (User) session.getAttribute("current-user");
+	System.out.println("User Session is :"+ user);
     if (user == null) {
 
         session.setAttribute("message", "You are not logged in !! Login first to access Checkout page");
@@ -46,9 +47,21 @@
             </div>
             </div>
             <div class="about-section-col">
-            <div class="about">
-            <a href="bill.jsp" style="color:red;"><b>To See Your Bill of Your Purchase Operation... Please click here</b></a>
+            
+            <div class="form-group">
+            
+            
+								<label for="EmailIdForOrders"><h4 style="color:red;"><b>This Email-Id has been used for Yours' Orders....!!! </b></h4> </label> 
+								<input name="email"  value ="<%=user.getUserEmail() %> " type="email" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" placeholder="Enter email">
+								<small id="emailHelp" class="form-text text-muted">We'll
+									never share your email with anyone else.</small>
+			</div>
+			<div class="about">
+            <a href="bill.jsp?emailId=<%=user.getUserEmail() %>" style="color:red;"><b>Click here to Print Your Bill...!!!</b></a>
              </div>
+            
+            
             <div class="card mt-2">
             <h6 style="color:#673ab7!important;" ><b>We have Best Category of Products as per User's Ratings</b></h6>
               </div>
