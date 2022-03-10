@@ -533,7 +533,31 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header custom-bg text-white">
-					<h5 class="modal-title" id="exampleModalLabel">Showing Purchased Report</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Purchased-Report</h5>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<!-- Search Bar Coding or search Icon coding -->
+					<div class="search-container">
+					<form action="getPurchaseReportsByCategoryOrByDate.jsp" method="post">
+						<input type="text" placeholder="FilterBy Date or,Category" name="searchName">
+						<button type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</form>
+					</div>
+					<!-- Search Bar ends here -->
+					
+					
+					
+					
+					
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -543,18 +567,55 @@
 				
 					<!-- we design a form here to give our input -->
 					<form action="#!" method="post">
-					
-					<input type="hidden" name="operation" value="addcategory">
-						<div class="form-group">
-							<input type="text" class="form-control" name="catTitle" placeholder="Please Enter Category Title" required/>
-						
-						</div>
-						<div class="form-group">
-							<textarea style="height:250px;" name="catDescription" class="form-control" placeholder="Please Enter Category Description"></textarea>
-						
-						</div>
+
+						<table class="table table-bordered table-dark">
+							<thead>
+								<tr>
+									<th scope="col">User</th>
+									<th scope="col">Email</th>
+									<th scope="col">Phone</th>
+									<th scope="col">Address</th>
+									<th scope="col">Date</th>
+									<th scope="col">Category</th>
+									<th scope="col">Status</th>
+									<th scope="col">Mode</th>
+									<th scope="col">Amount</th>
+									<th scope="col">Days</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%
+									try {
+									
+									Connection con = DbConnectionProvider.getCon();
+									Statement stmt = con.createStatement();
+									ResultSet rs = stmt.executeQuery("select *from purchasedrecord ");
+									while (rs.next()) {
+								%>
+								<tr>
+									
+									<td><%=rs.getString(2)%></td>
+									<td><%=rs.getString(3)%></td>
+									<td><%=rs.getString(4)%></td>
+									<td><%=rs.getString(5)%></td>
+									<td><%=rs.getString(6)%></td>
+									<td><%=rs.getString(7)%></td>
+									<td><%=rs.getString(8)%></td>
+									<td><%=rs.getString(9)%></td>
+									<td><%=rs.getString(10)%></td>
+									<td><%=rs.getString(11)%></td>
+								</tr>
+
+								<%
+									}
+
+								} catch (Exception e) {
+									System.out.println(e);
+								}
+								%>
+							</tbody>
+						</table>
 						<div class="container text-center">
-							<button class="btn btn-outline-success">Show Purchased Report</button>
 							<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Close</button>
 						
@@ -567,8 +628,6 @@
 			</div>
 		</div>
 	</div>
-
-
 <!-- End of Filtered Purchase Report Model -->
 
 
